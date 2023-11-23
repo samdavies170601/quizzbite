@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B9480BD02B0FD5D200FD192E /* quizzbiteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9480BCF2B0FD5D200FD192E /* quizzbiteApp.swift */; };
-		B9480BD22B0FD5D200FD192E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9480BD12B0FD5D200FD192E /* ContentView.swift */; };
+		B9480BD22B0FD5D200FD192E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9480BD12B0FD5D200FD192E /* HomeView.swift */; };
 		B9480BD42B0FD5D300FD192E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9480BD32B0FD5D300FD192E /* Assets.xcassets */; };
 		B9480BD72B0FD5D300FD192E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9480BD62B0FD5D300FD192E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		B9480BCC2B0FD5D200FD192E /* quizzbite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quizzbite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9480BCF2B0FD5D200FD192E /* quizzbiteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizzbiteApp.swift; sourceTree = "<group>"; };
-		B9480BD12B0FD5D200FD192E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B9480BD12B0FD5D200FD192E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B9480BD32B0FD5D300FD192E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9480BD62B0FD5D300FD192E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				B9480BCF2B0FD5D200FD192E /* quizzbiteApp.swift */,
-				B9480BD12B0FD5D200FD192E /* ContentView.swift */,
+				B9480BD12B0FD5D200FD192E /* HomeView.swift */,
 				B9480BD32B0FD5D300FD192E /* Assets.xcassets */,
 				B9480BD52B0FD5D300FD192E /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9480BD22B0FD5D200FD192E /* ContentView.swift in Sources */,
+				B9480BD22B0FD5D200FD192E /* HomeView.swift in Sources */,
 				B9480BD02B0FD5D200FD192E /* quizzbiteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
