@@ -52,7 +52,9 @@
 			isa = PBXGroup;
 			children = (
 				B9480BCF2B0FD5D200FD192E /* quizzbiteApp.swift */,
-				B9480BD12B0FD5D200FD192E /* HomeView.swift */,
+				B9D8B9732B10F0A000F80535 /* Models */,
+				B9D8B9722B10F08F00F80535 /* ViewModels */,
+				B9D8B9712B10F07B00F80535 /* Views */,
 				B9480BD32B0FD5D300FD192E /* Assets.xcassets */,
 				B9480BD52B0FD5D300FD192E /* Preview Content */,
 			);
@@ -65,6 +67,28 @@
 				B9480BD62B0FD5D300FD192E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B9D8B9712B10F07B00F80535 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B9480BD12B0FD5D200FD192E /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B9D8B9722B10F08F00F80535 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B9D8B9732B10F0A000F80535 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
