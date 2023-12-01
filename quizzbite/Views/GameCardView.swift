@@ -9,14 +9,14 @@ import SwiftUI
 
 struct GameCardView: View {
     
-    //Game Instance
-    let game: Game
+    let game: Game //a game instance
     
     var body: some View {
         ZStack {
+            
             Color.gray.ignoresSafeArea() //temporary
             
-            gameCardContent
+            cardContent
             
         }
     }
@@ -24,13 +24,17 @@ struct GameCardView: View {
 
 extension GameCardView {
     
-    //Game Card Content
-    var gameCardContent: some View {
+    //Card Content
+    var cardContent: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10.0)
-                .foregroundStyle(.white)
             
-            // MARK: - Start of Card Content VStack
+            Button(action: {
+                // TODO: Pressing the button should bring up the modal view.
+            }, label: {
+                RoundedRectangle(cornerRadius: 10.0)
+                    .foregroundStyle(.white)
+            })
+            
             VStack(spacing: 0) {
                 
                 HStack {
@@ -38,7 +42,6 @@ extension GameCardView {
                     Text(game.name).fontWeight(.semibold).font(.system(size: 18.0))
                     Spacer()
                 }
-                //.border(.black)
                 
                 HStack {
                     Text(game.description).fontWeight(.regular).font(.system(size: 12.0))
@@ -46,7 +49,6 @@ extension GameCardView {
                         .frame(height: 30)
                     Spacer()
                 }
-                //.border(.black)
                 
                 Spacer()
                 
@@ -55,12 +57,9 @@ extension GameCardView {
                     Text("High Score: \(game.highScore30)").fontWeight(.medium).font(.system(size: 14.0))
                     Spacer()
                 }
-                //.border(.black)
         
             }
             .padding(16.0)
-            //.border(.black)
-            // MARK: - End of Card Content VStack
             
         }
         .aspectRatio(3.05, contentMode: .fit)
