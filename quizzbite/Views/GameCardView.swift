@@ -28,6 +28,7 @@ extension GameCardView {
     var cardContent: some View {
         ZStack {
             
+            //GameCardView Button
             Button(action: {
                 // TODO: Pressing the button should bring up the modal view.
             }, label: {
@@ -37,12 +38,14 @@ extension GameCardView {
             
             VStack(spacing: 0) {
                 
+                //game.name HStack
                 HStack {
                     // TODO: Import the custom font, Poppins, create an AppFont ViewModel and implement the font within each View.
                     Text(game.name).fontWeight(.semibold).font(.system(size: 18.0))
                     Spacer()
                 }
                 
+                //game.description HStack
                 HStack {
                     Text(game.description).fontWeight(.regular).font(.system(size: 12.0))
                         .foregroundStyle(.gray)
@@ -52,10 +55,12 @@ extension GameCardView {
                 
                 Spacer()
                 
+                //game.highScore HStack
                 HStack {
                     // TODO: Implement a duration button to change the visible high score for each duration.
                     Text("High Score: \(game.highScore30)").fontWeight(.medium).font(.system(size: 14.0))
                     Spacer()
+                    GameCardToolbarView() //this includes the duration selector and the quick play button
                 }
         
             }
