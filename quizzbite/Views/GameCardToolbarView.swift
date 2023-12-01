@@ -9,7 +9,8 @@ import SwiftUI
 
 struct GameCardToolbarView: View {
     
-    @State private var durationSelected = GameLogic.GameDuration.shortGame
+    //Bindings
+    @Binding var durationSelected: GameLogic.GameDuration
     
     var body: some View {
         HStack(spacing: 32) {
@@ -41,6 +42,11 @@ struct GameCardToolbarView: View {
     }
 }
 
-#Preview {
-    GameCardToolbarView()
+// TODO: Learn the new preview system and refactor this preview.
+struct GameCardToolbar_Preview: PreviewProvider {
+    @State static private var durationSelected = GameLogic.GameDuration.shortGame
+    static var previews: some View {
+        GameCardToolbarView(durationSelected: $durationSelected)
+    }
+    
 }

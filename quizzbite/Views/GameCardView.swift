@@ -9,6 +9,10 @@ import SwiftUI
 
 struct GameCardView: View {
     
+    //State Variables
+    @State private var durationSelected = GameLogic.GameDuration.shortGame
+    
+    //Constants
     let game: Game //a game instance
     
     var body: some View {
@@ -58,9 +62,16 @@ extension GameCardView {
                 //game.highScore HStack
                 HStack {
                     // TODO: Implement a duration button to change the visible high score for each duration.
-                    Text("High Score: \(game.highScore30)").fontWeight(.medium).font(.system(size: 14.0))
+                    switch durationSelected {
+                    case .shortGame:
+                        Text("High Score: \(game.highScore30)").fontWeight(.medium).font(.system(size: 14.0))
+                    case .mediumGame:
+                        Text("High Score: \(game.highScore60)").fontWeight(.medium).font(.system(size: 14.0))
+                    case .longGame:
+                        Text("High Score: \(game.highScore90)").fontWeight(.medium).font(.system(size: 14.0))
+                    } //the high score text changes for each duration
                     Spacer()
-                    GameCardToolbarView() //this includes the duration selector and the quick play button
+                    GameCardToolbarView(durationSelected: $durationSelected) //this includes the duration selector and the quick play button
                 }
         
             }
@@ -76,5 +87,5 @@ extension GameCardView {
 
 // TODO: Learn the new preview system.
 #Preview {
-    GameCardView(game: Game(name: "Guess the Flag", description: "Test your knowledge of World Flags in this quiz: Guess the Flag!", highScore30: 0, highScore60: 0, highScore90: 0))
+    GameCardView(game: Game(name: "Guess the Flag", description: "Test your knowledge of World Flags in this quiz: Guess the Flag!", highScore30: 1, highScore60: 11, highScore90: 21))
 }
