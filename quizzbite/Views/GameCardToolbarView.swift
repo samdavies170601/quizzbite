@@ -13,7 +13,7 @@ struct GameCardToolbarView: View {
     @Binding var durationSelected: GameLogic.GameDuration
     
     var body: some View {
-        HStack(spacing: 32) {
+        HStack(spacing: 16) {
             
             HStack {
                 
@@ -24,7 +24,8 @@ struct GameCardToolbarView: View {
                     }, label: {
                         Text("\(duration.rawValue)")
                         // TODO: Implement AppColor to set the specific colour of a selected and unselected duration.
-                            .foregroundStyle(duration == durationSelected ? .blue : .gray)
+                            .foregroundStyle(duration == durationSelected ? .black : .gray)
+                            .font(AppFont.gameDuration)
                     })
                 }
                 
@@ -36,6 +37,7 @@ struct GameCardToolbarView: View {
             }, label: {
                 // TODO: Implement the correct icon.
                 Image(systemName: "play")
+                    .foregroundStyle(.black)
             })
             
         }

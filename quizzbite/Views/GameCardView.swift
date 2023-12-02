@@ -44,16 +44,17 @@ extension GameCardView {
                 
                 //game.name HStack
                 HStack {
-                    // TODO: Import the custom font, Poppins, create an AppFont ViewModel and implement the font within each View.
-                    Text(game.name).fontWeight(.semibold).font(.system(size: 18.0))
+                    Text(game.name)
+                        .font(AppFont.gameTitle)
                     Spacer()
                 }
                 
                 //game.description HStack
                 HStack {
-                    Text(game.description).fontWeight(.regular).font(.system(size: 12.0))
+                    Text(game.description)
                         .foregroundStyle(.gray)
-                        .frame(height: 30)
+                        .font(AppFont.gameDescription)
+                        .frame(height: 35)
                     Spacer()
                 }
                 
@@ -61,14 +62,14 @@ extension GameCardView {
                 
                 //game.highScore HStack
                 HStack {
-                    // TODO: Implement a duration button to change the visible high score for each duration.
+                    // TODO: Refactor this section to include a single Text view rather than three.
                     switch durationSelected {
                     case .shortGame:
-                        Text("High Score: \(game.highScore30)").fontWeight(.medium).font(.system(size: 14.0))
+                        Text("High Score: \(game.highScore30)").font(AppFont.highScore)
                     case .mediumGame:
-                        Text("High Score: \(game.highScore60)").fontWeight(.medium).font(.system(size: 14.0))
+                        Text("High Score: \(game.highScore60)").font(AppFont.highScore)
                     case .longGame:
-                        Text("High Score: \(game.highScore90)").fontWeight(.medium).font(.system(size: 14.0))
+                        Text("High Score: \(game.highScore90)").font(AppFont.highScore)
                     } //the high score text changes for each duration
                     Spacer()
                     GameCardToolbarView(durationSelected: $durationSelected) //this includes the duration selector and the quick play button
