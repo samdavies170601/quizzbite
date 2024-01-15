@@ -11,6 +11,7 @@ struct PreGameView: View {
     
     //Bindings
     @Binding var game: Game
+    @Binding var isPresented: Bool
     
     var body: some View {
         
@@ -22,6 +23,12 @@ struct PreGameView: View {
                 Text(game.name)
                     .font(AppFont.preGameTitle)
                 Spacer()
+                Button(action: {
+                    isPresented = false
+                }, label: {
+                    Image(systemName: "x.circle")
+                        .foregroundStyle(.black)
+                })
             }
             .padding(.horizontal, 32.0)
             
@@ -50,7 +57,8 @@ struct PreGameView: View {
 
 struct PreGameView_Preview: PreviewProvider {
     @State static private var game = Game(name: "Guess the Flag", description: "Test your knowledge of World Flags in this quiz: Guess the Flag!", highScore30: 1, highScore60: 11, highScore90: 21)
+    @State static private var isPresented = true
     static var previews: some View {
-        PreGameView(game: $game)
+        PreGameView(game: $game, isPresented: $isPresented)
     }
 }

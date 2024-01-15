@@ -24,7 +24,7 @@ struct GameCardView: View {
             
             cardContent
                 .sheet(isPresented: $isPresented, content: {
-                    PreGameView(game: $game)
+                    PreGameView(game: $game, isPresented: $isPresented)
                         .presentationDetents([.fraction(modalHeight)])
                 })
             
