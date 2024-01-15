@@ -44,7 +44,6 @@ struct GameCardToolbarView: View {
     }
 }
 
-// TODO: Learn the new preview system and refactor this preview.
 struct GameCardToolbar_Preview: PreviewProvider {
     @State static private var durationSelected = GameLogic.GameDuration.shortGame
     static var previews: some View {
