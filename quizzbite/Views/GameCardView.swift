@@ -9,18 +9,24 @@ import SwiftUI
 
 struct GameCardView: View {
     
-    //State Variables
+    //States
     @State private var durationSelected = GameLogic.GameDuration.shortGame
+    @State private var isPresented = false //is the modal (PreGameView) selected
+    
+    //Bindings
+    @Binding var game: Game
     
     //Constants
-    let game: Game //a game instance
+    let modalHeight = 0.33
     
     var body: some View {
         ZStack {
             
-            Color.gray.ignoresSafeArea() //temporary
-            
             cardContent
+                .sheet(isPresented: $isPresented, content: {
+                    PreGameView(game: $game)
+                        .presentationDetents([.fraction(modalHeight)])
+                })
             
         }
     }
@@ -34,7 +40,7 @@ extension GameCardView {
             
             //GameCardView Button
             Button(action: {
-                // TODO: Pressing the button should bring up the modal view.
+                isPresented = true
             }, label: {
                 RoundedRectangle(cornerRadius: 10.0)
                     .foregroundStyle(.white)
@@ -87,6 +93,9 @@ extension GameCardView {
 }
 
 // TODO: Learn the new preview system.
-#Preview {
-    GameCardView(game: Game(name: "Guess the Flag", description: "Test your knowledge of World Flags in this quiz: Guess the Flag!", highScore30: 1, highScore60: 11, highScore90: 21))
+struct GameCardView_Preview: PreviewProvider {
+    @State static private var game = Game(name: "Guess the Flag", description: "Test your knowledge of World Flags in this quiz: Guess the Flag!", highScore30: 1, highScore60: 11, highScore90: 21)
+    static var previews: some View {
+        GameCardView(game: $game)
+    }
 }
