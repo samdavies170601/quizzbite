@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        ZStack {
+            AppColor.background.ignoresSafeArea()
+            VStack(spacing: 0) {
+                // MARK: - Title
+                HStack {
+                    Text("Games")
+                        .font(AppFont.title)
+                        .padding(.horizontal, 32.0)
+                    Spacer()
+                }
+                // MARK: - GameCardListView
+                GameCardListView()
+                    .environmentObject(GameLogic())
+                
+            }
         }
-        .padding()
     }
 }
 

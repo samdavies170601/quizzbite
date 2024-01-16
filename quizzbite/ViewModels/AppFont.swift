@@ -16,4 +16,5 @@ struct AppFont {
     static let preGameTitle = Font.custom("Poppins-Bold", size: 32.0)
     static let preGameDescription = Font.custom("Poppins-Medium", size: 24.0)
     static let start = Font.custom("Poppins-SemiBold", size: 22.0)
+    static let title = Font.custom("Poppins-Bold", size: 32.0)
 }

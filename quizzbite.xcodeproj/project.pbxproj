@@ -23,6 +23,7 @@
 		B98293BD2B557955000669F9 /* PreGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98293BC2B557955000669F9 /* PreGameView.swift */; };
 		B98EF0AD2B1A559000908D75 /* GameCardToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EF0AC2B1A559000908D75 /* GameCardToolbarView.swift */; };
 		B98EF0AF2B1A56F100908D75 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98EF0AE2B1A56F100908D75 /* GameLogic.swift */; };
+		B9B688422B5584D900BC0FE7 /* GameCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B688412B5584D900BC0FE7 /* GameCardListView.swift */; };
 		B9D8B9752B10F11300F80535 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8B9742B10F11300F80535 /* GameCardView.swift */; };
 		B9D8B9772B10F3EA00F80535 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D8B9762B10F3EA00F80535 /* Game.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		B98293BC2B557955000669F9 /* PreGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreGameView.swift; sourceTree = "<group>"; };
 		B98EF0AC2B1A559000908D75 /* GameCardToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardToolbarView.swift; sourceTree = "<group>"; };
 		B98EF0AE2B1A56F100908D75 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		B9B688412B5584D900BC0FE7 /* GameCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardListView.swift; sourceTree = "<group>"; };
 		B9D8B9742B10F11300F80535 /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		B9D8B9762B10F3EA00F80535 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B9480BD12B0FD5D200FD192E /* HomeView.swift */,
+				B9B688412B5584D900BC0FE7 /* GameCardListView.swift */,
 				B9D8B9742B10F11300F80535 /* GameCardView.swift */,
 				B98EF0AC2B1A559000908D75 /* GameCardToolbarView.swift */,
 				B98293BC2B557955000669F9 /* PreGameView.swift */,
@@ -226,6 +229,7 @@
 				B9480BD22B0FD5D200FD192E /* HomeView.swift in Sources */,
 				B92E52AD2B1B84F600E3C562 /* AppColor.swift in Sources */,
 				B9D8B9752B10F11300F80535 /* GameCardView.swift in Sources */,
+				B9B688422B5584D900BC0FE7 /* GameCardListView.swift in Sources */,
 				B9480BD02B0FD5D200FD192E /* quizzbiteApp.swift in Sources */,
 				B9D8B9772B10F3EA00F80535 /* Game.swift in Sources */,
 				B98293BD2B557955000669F9 /* PreGameView.swift in Sources */,

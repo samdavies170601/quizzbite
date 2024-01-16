@@ -9,15 +9,13 @@ import SwiftUI
 
 struct GameCardToolbarView: View {
     
-    //Bindings
     @Binding var durationSelected: GameLogic.GameDuration
     
     var body: some View {
+        
         HStack(spacing: 16) {
-            
             HStack {
-                
-                //Duration Selector
+                // MARK: - Game Duration Selector
                 ForEach(GameLogic.GameDuration.allCases, id: \.self) { duration in
                     Button(action: {
                         durationSelected = duration
@@ -28,10 +26,8 @@ struct GameCardToolbarView: View {
                             .font(AppFont.gameDuration)
                     })
                 }
-                
             }
-            
-            //Quick Play Button
+            // MARK: - Quick Play Button
             Button(action: {
                 // TODO: Navigates to CountdownView and initialises the game.
             }, label: {
@@ -39,8 +35,8 @@ struct GameCardToolbarView: View {
                 Image(systemName: "play")
                     .foregroundStyle(.black)
             })
-            
         }
+        
     }
 }
 

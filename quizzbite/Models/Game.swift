@@ -7,15 +7,26 @@
 
 import Foundation
 
-struct Game {
+struct Game: Identifiable {
     
-    //Descriptive Properties
+    let id = UUID()
+    
     let name: String
     let description: String
     
-    //High Score Properties
-    var highScore30: Int //the user high score for a 30 second game
-    var highScore60: Int
-    var highScore90: Int
+    var highScoreShortGame: Int
+    var highScoreMediumGame: Int
+    var highScoreLongGame: Int
+    
+}
+
+extension Game {
+    
+    /// The games array.
+    static var games: [Game] {
+        [Game(name: "Guess the Flag", description: "Test your knowledge of World Flags in this quiz: Guess the Flag!", highScoreShortGame: 1, highScoreMediumGame: 11, highScoreLongGame: 21),
+        
+        ]
+    }
     
 }
