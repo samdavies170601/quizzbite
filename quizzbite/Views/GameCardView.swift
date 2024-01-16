@@ -5,21 +5,19 @@
 //  Created by Sam Davies on 24/11/2023.
 //
 
+// TODO: Learn the new preview system.
+
 import SwiftUI
 
 struct GameCardView: View {
     
-    //States
     @State private var durationSelected = GameLogic.GameDuration.shortGame
     @State private var isPresented = false //is the modal (PreGameView) selected
-    
-    //Bindings
     @Binding var game: Game
-    
-    //Constants
     let modalHeight = 0.33
     
     var body: some View {
+        
         ZStack {
             
             cardContent
@@ -29,16 +27,16 @@ struct GameCardView: View {
                 })
             
         }
+        
     }
 }
 
 extension GameCardView {
     
-    //Card Content
     var cardContent: some View {
         ZStack {
             
-            //GameCardView Button
+            // MARK: - Button
             Button(action: {
                 isPresented = true
             }, label: {
@@ -47,15 +45,13 @@ extension GameCardView {
             })
             
             VStack(spacing: 0) {
-                
-                //game.name HStack
+                // MARK: - Game Name
                 HStack {
                     Text(game.name)
                         .font(AppFont.gameTitle)
                     Spacer()
                 }
-                
-                //game.description HStack
+                // MARK: - Game Description
                 HStack {
                     Text(game.description)
                         .foregroundStyle(.gray)
@@ -63,19 +59,17 @@ extension GameCardView {
                         .frame(height: 35)
                     Spacer()
                 }
-                
                 Spacer()
-                
-                //game.highScore HStack
+                // MARK: - Game High Scores and Toolbar
                 HStack {
                     // TODO: Refactor this section to include a single Text view rather than three.
                     switch durationSelected {
                     case .shortGame:
-                        Text("High Score: \(game.highScore30)").font(AppFont.highScore)
+                        Text("High Score: \(game.highScoreShortGame)").font(AppFont.highScore)
                     case .mediumGame:
-                        Text("High Score: \(game.highScore60)").font(AppFont.highScore)
+                        Text("High Score: \(game.highScoreMediumGame)").font(AppFont.highScore)
                     case .longGame:
-                        Text("High Score: \(game.highScore90)").font(AppFont.highScore)
+                        Text("High Score: \(game.highScoreLongGame)").font(AppFont.highScore)
                     } //the high score text changes for each duration
                     Spacer()
                     GameCardToolbarView(durationSelected: $durationSelected) //this includes the duration selector and the quick play button
@@ -88,13 +82,13 @@ extension GameCardView {
         .aspectRatio(3.05, contentMode: .fit)
         .frame(maxWidth: 366.0, maxHeight: 120.0)
         .padding(.horizontal, 32.0)
+        
     }
     
 }
 
-// TODO: Learn the new preview system.
 struct GameCardView_Preview: PreviewProvider {
-    @State static private var game = Game(name: "Guess the Flag", description: "Test your knowledge of World Flags in this quiz: Guess the Flag!", highScore30: 1, highScore60: 11, highScore90: 21)
+    @State static private var game = Game(name: "Guess the Flag", description: "Test your knowledge of World Flags in this quiz: Guess the Flag!", highScoreShortGame: 1, highScoreMediumGame: 11, highScoreLongGame: 21)
     static var previews: some View {
         GameCardView(game: $game)
     }
